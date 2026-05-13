@@ -75,9 +75,9 @@ pin_write(
 
 versions <- pin_versions(model_board, "churn_model_caret")
 
-league_table <- map_dfr(versions$version, function(v) {
+league_table <- purrr::map_dfr(versions$version, function(v) {
   meta <- pin_meta(model_board, "churn_model_caret", version = v)
-  tibble(
+  purrr::tibble(
     version = v,
     method = meta$user$method,
     cv_roc = meta$user$cv_roc,
@@ -89,3 +89,5 @@ league_table <- map_dfr(versions$version, function(v) {
 })
 
 saveRDS(league_table, "league_table.rdata")
+LT <- readRDS("league_table.rdata")
+LT
