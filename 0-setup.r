@@ -1,7 +1,7 @@
-install.packages(c("modeldata", "pins", "ranger", "caret", "yardstick"))
+install.packages(c("modeldata", "pins", "ranger", "caret", "yardstick", "glmnet"))
 library(modeldata)
 library(pins)
 library(ranger)
 library(caret)
 library(yardstick)
-
+library(glmnet)
